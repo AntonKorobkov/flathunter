@@ -166,7 +166,16 @@ class Immobilienscout(Crawler):
             'total_price':
                 str(entry.get('calculatedTotalRent', {}).get("totalRent", {}).get('value', '')),
             'size': str(entry.get("livingSpace", '')),
-            'rooms': str(entry.get("numberOfRooms", ''))
+            'rooms': str(entry.get("numberOfRooms", '')),
+            'poster_full': ", ".join(
+                [
+                    entry.get("contactDetails", {}).get("firstname", ""),
+                    entry.get("contactDetails", {}).get("lastname", ""),
+                    entry.get("contactDetails", {}).get("company", "")
+                ]
+            ),
+            'poster_gender': entry.get("contactDetails", {}).get("salutation", ""),
+            'poster_second_name': entry.get("contactDetails", {}).get("lastname", "")
         }
 
     def set_cookie(self):

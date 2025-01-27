@@ -174,5 +174,8 @@ class SenderTelegram(Processor, Notifier):
             price=expose.get('price', 'N/A'),
             url=expose.get('url', 'N/A'),
             address=expose.get('address', 'N/A'),
-            durations=expose.get('durations', 'N/A')
+            durations=expose.get('durations', 'N/A'),
+            poster_gender=expose.get('poster_gender', 'N/A'),
+            poster_full=expose.get('poster_full', 'N/A'),
+            poster_second_name=expose.get('poster_second_name', 'N/A')
         ).strip()
